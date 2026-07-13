@@ -1,0 +1,223 @@
+%-------------------------
+% Resume in Latex
+% Author : Pavel Kolyagin
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Колягин Павел} \\ \vspace{1pt}
+    \small Software Engineer --- Internal Tools \& AI $|$ Опыт работы: 3 года 11 месяцев \\ \vspace{1pt}
+    \small +7 914-978-82-75 $|$ \href{mailto:inbox@paulrainy.ru}{\underline{inbox@paulrainy.ru}} $|$
+    \href{https://github.com/paulrainy}{\underline{github.com/paulrainy}}
+\end{center}
+
+
+%-----------ОБО МНЕ-----------
+\section{Обо мне}
+  \small{Инженер полного цикла: проектирую, разрабатываю и внедряю внутренние инструменты --- от бэкенда и БД до фронтенда и деплоя. Строю системы, которые ускоряют работу инженерных команд: анализ результатов нагрузочного тестирования, мониторинг тестовых стендов, генерация тестовых данных и автотестов. Применяю LLM и векторный поиск (RAG, эмбеддинги) в продуктовых задачах. Бэкграунд --- автоматизация тестирования (Java/Python) и разработка для защищённых систем (QNX, ФСТЭК).
+
+  Формат работы: полная занятость, гибкий график, удаленная работа}
+
+
+%-----------ОПЫТ РАБОТЫ-----------
+\section{Опыт работы}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Инженер по автоматизации тестирования}{Июнь 2024 --- настоящее время}
+      {ООО «РСХБ-Автоматизация» и ООО «РСХБ-ИНТЕХ»}{Россия, Москва}
+      \resumeItemListStart
+        \resumeItem{Разработал fullstack-инструмент анализа результатов нагрузочного тестирования (Python + Streamlit + PostgreSQL): интеграция с 7 источниками метрик (Zabbix, Prometheus, InfluxDB, Grafana, Kibana, Oracle, PostgreSQL), автоматическое сравнение релизов с подсветкой отклонений, выгрузка отчетов в web, docx и xlsx}
+        \resumeItem{Участвовал в разработке решения для hr отдела, позволяющее генерировать презентации и промо материалы с помощью больших языковых моделей. Добавил в проект поддержку Nano Banana и gpt-5-image.}
+        \resumeItem{Разработал Down Detector как готовое fullstack решение (Python + FastAPI + TypeScript + React) для Rest сервисов всех тестовых окружений компании, повысив прозрачность состояния тестовых стендов для тестировщиков.}
+        \resumeItem{Построил RAG-пайплайн для генерации автотестов на основе тест-кейсов (Python + Sentence-Transformers + Apache Airflow), в разы ускорив процесс автоматизации тест-кейсов автоматизаторами.}
+        \resumeItem{Спроектировал 86 API тест-кейсов и автоматизировал 164 API и UI тест-кейса за второе полугодие 2025}
+        \resumeItem{Исследовал возможности embedding и reranker-моделей в области актуализации пар тест-кейс --- автотест}
+        \resumeItem{Выполнил рефакторинг legacy бэкенда сервиса по быстрой генерации клиента банка в тестовом окружении: разбил монолит на микросервисы, что улучшило читаемость и добавило возможность масштабирования функционала проекта}
+        \resumeItem{Написал парсер для legacy почтового сервиса Lotus Notes (Java 21 + Selenide), облегчив пользователям миграцию на новый почтовый сервис, а также сохранив все их вложения}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Инженер}{Август 2022 --- Июнь 2024}
+      {АО «Концерн „Моринсис-Агат``»}{Россия, Москва}
+      \resumeItemListStart
+        \resumeItem{Интегрировал СДЗ «Аккорд-АМДЗ» в информационную систему под управлением ОС QNX Neutrino}
+        \resumeItem{Разработал пользовательский API для поддержки СДЗ «Аккорд-АМДЗ» в ОС QNX Neutrino}
+        \resumeItem{Реализовал десктопное приложение для перевода геодезических координат между системами ПЗ90.11, СК-42 и WGS-84}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------НАГРАДЫ И ВЫСТУПЛЕНИЯ-----------
+\section{Награды и выступления}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Победитель}{05.2026}
+      {Конкурс «Лучший по профессии», номинация «Лучший тестировщик» (РСХБ-Автоматизация)}{Россия, Москва}
+    \resumeSubheading
+      {Спикер}{12.2025}
+      {Testify \#12}{Россия, Москва}
+    \resumeSubheading
+      {Стендист}{04.2025}
+      {Heisenbug Spring 2025}{Россия, Москва}
+  \resumeSubHeadingListEnd
+
+
+%-----------ОБРАЗОВАНИЕ-----------
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {РТУ МИРЭА (Российский технологический университет «МИРЭА»)}{Россия, Москва}
+      {Магистр, Информатика и вычислительная техника}{Сентябрь 2023 --- Июль 2025}
+    \resumeSubheading
+      {НИУ МЭИ (Национальный исследовательский университет «МЭИ»)}{Россия, Москва}
+      {Бакалавр, Информационная безопасность}{Сентябрь 2019 --- Июль 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ-----------
+\section{Дополнительное образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Академия трансформации (АО «Россельхозбанк»)}{Россия, Москва}
+      {Слушатель}{Апрель 2026}
+      \resumeItemListStart
+        \resumeItem{«Оптимизация процессов. Подход DMAIC» --- факультет «Управление процессами»}
+      \resumeItemListEnd
+    \resumeSubheading
+      {РТУ МИРЭА (Российский технологический университет «МИРЭА»)}{Россия, Москва}
+      {Студент}{Сентябрь 2023 --- Декабрь 2023}
+      \resumeItemListStart
+        \resumeItem{Менеджмент (профессиональная переподготовка)}
+      \resumeItemListEnd
+    \resumeSubheading
+      {НИУ МЭИ (Национальный исследовательский университет «МЭИ»)}{Россия, Москва}
+      {Студент}{Сентябрь 2022 --- Декабрь 2022}
+      \resumeItemListStart
+        \resumeItem{Цифровизация и развитие информационных систем (профессиональная переподготовка): разработка программного обеспечения на C++, блокчейн и криптовалюты, администрирование Linux и Windows (AD)}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------СТЕК ТЕХНОЛОГИЙ-----------
+\section{Стек технологий}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{ML \& AI}{: Camel-ai, Sentence-transformers, Transformers, Scikit-learn, PyTorch} \\
+     \textbf{Backend}{: Spring, FastAPI, Uvicorn, SQLAlchemy} \\
+     \textbf{DevOps}{: Docker, Docker-compose, Apache Airflow, Github Actions} \\
+     \textbf{Frontend}{: Vue3, Streamlit} \\
+     \textbf{Programming}{: Java, Python, C++, C} \\
+     \textbf{Databases}{: Milvus, QDrant, PostgreSQL, ELK Stack} \\
+     \textbf{Языки}{: Русский (родной), Английский (B1)}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
