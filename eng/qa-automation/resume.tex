@@ -1,0 +1,183 @@
+%-------------------------
+% Resume in Latex
+% Author : Pavel Kolyagin
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Pavel Kolyagin} \\ \vspace{1pt}
+    \small QA Automation Engineer $|$ Moscow, Russia (GMT+3) $|$ open to remote \\ \vspace{1pt}
+    \small +7 914-978-82-75 $|$ \href{mailto:inbox@paulrainy.ru}{\underline{inbox@paulrainy.ru}} $|$
+    \href{https://github.com/paulrainy}{\underline{github.com/paulrainy}}
+\end{center}
+
+
+%-----------SUMMARY-----------
+\section{Summary}
+  \small{QA Automation Engineer with a fullstack profile. I design and automate API and UI tests for banking systems, and build the tooling that makes testing faster: load-testing analytics, test-environment monitoring, test-data generation, and RAG-based autotest generation. Comfortable across the whole stack --- Java, Python, TypeScript; FastAPI, React, PostgreSQL, Docker, CI/CD. Winner of the company-wide ``Best Tester'' award, QA conference speaker (Testify, Heisenbug).}
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {QA Automation Engineer}{June 2024 -- Present}
+      {RSHB-Automation \& RSHB-INTECH (IT subsidiaries of Russian Agricultural Bank)}{Moscow, Russia}
+      \resumeItemListStart
+        \resumeItem{Designed 86 API test cases and developed 164 automated API and UI tests in H2 2025 within the bank's loan origination platform}
+        \resumeItem{Automated user migration from a legacy Lotus Notes email service by building a UI parser (Java 21 + Selenide) that preserved all user attachments}
+        \resumeItem{Built a fullstack load-testing analytics tool (Python + Streamlit + PostgreSQL): integrates 7 metric sources (Zabbix, Prometheus, InfluxDB, Grafana, Kibana, Oracle, PostgreSQL), automatically compares releases highlighting deviations, and exports reports to web, docx and xlsx}
+        \resumeItem{Developed Down Detector, a fullstack monitoring service (Python + FastAPI + TypeScript + React) covering REST services across all of the company's test environments, giving QA engineers real-time visibility into test-stand health}
+        \resumeItem{Built a RAG pipeline that generates automated tests from manual test cases (Python + Sentence-Transformers + Apache Airflow), significantly speeding up test automation across the team}
+        \resumeItem{Researched embedding and reranker models for keeping test-case-to-autotest mappings up to date}
+        \resumeItem{Refactored the legacy backend of a test-data generation service (bank-client generator): split the monolith into microservices, improving maintainability and enabling the project to scale}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------AWARDS & TALKS-----------
+\section{Awards \& Talks}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+        {\textbf{Winner} $|$ \emph{``Best in Profession'' company-wide contest, ``Best Tester'' nomination (RSHB-Automation)}}{May 2026}
+    \resumeProjectHeading
+        {\textbf{Speaker} $|$ \emph{Testify \#12, QA community meetup}}{Dec. 2025}
+    \resumeProjectHeading
+        {\textbf{Exhibitor} $|$ \emph{Heisenbug Spring 2025, software testing conference}}{Apr. 2025}
+  \resumeSubHeadingListEnd
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {MIREA --- Russian Technological University}{Moscow, Russia}
+      {M.S. in Computer Science and Engineering}{Sep. 2023 -- Jul. 2025}
+    \resumeSubheading
+      {Moscow Power Engineering Institute (NRU MPEI)}{Moscow, Russia}
+      {B.S. in Information Security}{Sep. 2019 -- Jul. 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Testing}{: REST API testing, UI test automation, Playwright, Selenide, Allure, Rest-assured} \\
+     \textbf{Programming}{: Java, Python, TypeScript, C/C++} \\
+     \textbf{Backend}{: Spring, FastAPI, SQLAlchemy} \\
+     \textbf{Frontend}{: Vue 3, Streamlit} \\
+     \textbf{CI/CD \& DevOps}{: Git, Docker, Docker Compose, GitHub Actions, Apache Airflow} \\
+     \textbf{Databases}{: PostgreSQL, Milvus, QDrant, ELK Stack} \\
+     \textbf{AI \& ML}{: RAG, embeddings \& rerankers, Sentence-Transformers} \\
+     \textbf{Languages}{: Russian (native), English (B1)}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
