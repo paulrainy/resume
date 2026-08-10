@@ -1,0 +1,217 @@
+%-------------------------
+% Resume in Latex
+% Author : Pavel Kolyagin
+% Based off of: https://github.com/sb2nov/resume
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[T2A]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% NB: PT Serif выбран вместо дефолтного Computer Modern — у CMR кернинг
+% заглавных кириллических букв узкий, из-за чего "Колягин Павел" в \Huge
+% визуально слипается и хуже извлекается в текст из PDF. PT Serif — T2A шрифт,
+% разработанный под кириллицу, даёт заметно больший межсловный интервал.
+\usepackage{PTSerif}
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+% NB: \scshape убран намеренно — кириллические псевдо-капсы плохо парсятся частью ATS.
+\titleformat{\section}{
+  \vspace{-4pt}\bfseries\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge Колягин Павел} \\ \vspace{2pt}
+    \small Middle QA Automation / SDET $|$ Москва $|$ Удалённо \\ \vspace{1pt}
+    \small +7 914-978-82-75 $|$ \href{mailto:inbox@paulrainy.ru}{\underline{inbox@paulrainy.ru}} $|$
+    \href{https://github.com/paulrainy}{\underline{github.com/paulrainy}}
+\end{center}
+
+
+%-----------ОБО МНЕ-----------
+\section{Обо мне}
+  \small{Инженер по автоматизации тестирования с fullstack-профилем. Проектирую и автоматизирую API и UI тесты банковских систем и строю инструменты, ускоряющие сам процесс тестирования: аналитика нагрузочного тестирования, мониторинг стендов, RAG-генерация автотестов.}
+
+
+%-----------ОПЫТ РАБОТЫ-----------
+\section{Опыт работы}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Инженер по автоматизации тестирования}{Июнь 2024 --- настоящее время}
+      {ООО «РСХБ-Автоматизация» и ООО «РСХБ-ИНТЕХ»}{Россия, Москва}
+      \resumeItemListStart
+        \resumeItem{Автоматизирую регрессионное тестирование Единого фронтального решения (ЕФР) --- фронт-офисной платформы банка, экосистемы из 50+ микросервисов с параллельной миграцией фронтенда}
+        \resumeItem{Спроектировал 86 API тест-кейсов и разработал 164 автоматизированных API- и UI-теста за второе полугодие 2025 (Java 21, TestNG, Selenide, Rest-assured, Allure; TMS --- Test IT; запуск в Jenkins)}
+        \resumeItem{Внедрил слой SQL-валидации бизнес-данных в тест-фреймворк (Spring NamedParameterJdbcTemplate): 80+ параметризованных запросов с JOIN по кредитным, депозитным и ипотечным сущностям для сверки данных после операций}
+        \resumeItem{Тестировал асинхронные интеграции через IBM MQ там, где REST API был недоступен --- например, извлечение уведомления из журнала ЕФР для верификации сценария создания клиента}
+        \resumeItem{Построил RAG-пайплайн генерации API-автотестов из тест-кейсов (Python, Sentence-Transformers, Milvus, Apache Airflow): поиск дубликатов и связанных тест-кейсов ускорился с нескольких часов до 0.12 с (векторный поиск по Milvus), генерация одного API-автотеста --- 20 с против 30 минут вручную; 3 квартала пайплайн закрывал план 150 API-автотестов в квартал}
+        \resumeItem{Устранил flaky-тесты, вызванные конкуренцией за общие данные: перевёл автотесты с единого захардкоженного тестового пользователя на генерацию отдельного пользователя под каждый запуск}
+        % TODO: добавить flaky-rate % из истории Jenkins/Test IT, когда будут точные цифры
+        \resumeItem{Выявил и отозвал дефектный тест-кейс (смена прав администратора в ЕФР без отката при падении), каскадно ронявший сотни автотестов в одном прогоне Jenkins --- усилил требования к изоляции состояния тестов}
+        \resumeItem{Разработал инструмент анализа результатов нагрузочного тестирования (Python, Streamlit, PostgreSQL): интеграция с 6 источниками метрик (Zabbix, Prometheus, InfluxDB, Grafana, Kibana, PostgreSQL), сравнение до 5 релизов одновременно, сокращение сбора аналитики с 3--8 часов до 2 минут, экспорт отчётов в web, docx и xlsx}
+        \resumeItem{Покрыл инструмент 593 автотестами (unit / integration / e2e на pytest + Playwright, покрытие 72\%, GitLab CI)}
+        \resumeItem{Разработал EFR Down Detector --- сервис мониторинга (Python, FastAPI, Redis, Vue 3): в реальном времени отслеживает доступность REST-сервисов ЕФР на 4 тестовых окружениях, которым пользуются 14 тестировщиков вместо ручной проверки стендов}
+        \resumeItem{Провёл рефакторинг генератора тестовых клиентов банка: вынес логику в отдельный Spring Boot REST-сервис (Java 21) и Vue 3-фронтенд, контейнеризовал (Docker Compose), упростив поддержку и масштабирование}
+        \resumeItem{Написал парсер для legacy почтового сервиса Lotus Notes (Java 21, Selenide): автоматизировал миграцию писем пользователей на новый почтовый сервис с сохранением вложений}
+        \resumeItem{Интегрировал в корпоративный генератор презентаций и промо-материалов для HR-отдела поддержку новых LLM-моделей генерации изображений (Nano Banana, GPT-5-image)}
+        \resumeItem{Исследовал embedding- и reranker-модели для актуализации пар «тест-кейс~$\leftrightarrow$~автотест» (Jina embeddings, Test IT API)}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------НАГРАДЫ И ВЫСТУПЛЕНИЯ-----------
+\section{Награды и выступления}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Победитель} $|$ \emph{«Лучший по профессии», номинация «Лучший тестировщик» (РСХБ-Авто)}}{05.2026}
+    \resumeProjectHeading
+      {\textbf{Спикер} $|$ \emph{Testify \#12, QA-митап}}{12.2025}
+    \resumeProjectHeading
+      {\textbf{Стендист} $|$ \emph{Heisenbug Spring 2025, конференция по тестированию ПО}}{04.2025}
+  \resumeSubHeadingListEnd
+
+
+%-----------ОБРАЗОВАНИЕ-----------
+\section{Образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {РТУ МИРЭА (Российский технологический университет «МИРЭА»)}{Россия, Москва}
+      {Магистр, Информатика и вычислительная техника}{Сентябрь 2023 --- Июль 2025}
+    \resumeSubheading
+      {НИУ МЭИ (Национальный исследовательский университет «МЭИ»)}{Россия, Москва}
+      {Бакалавр, Информационная безопасность}{Сентябрь 2019 --- Июль 2023}
+  \resumeSubHeadingListEnd
+
+
+%-----------ДОПОЛНИТЕЛЬНОЕ ОБРАЗОВАНИЕ-----------
+\section{Дополнительное образование}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Академия трансформации (АО «Россельхозбанк»)}{Россия, Москва}
+      {Слушатель}{Апрель 2026}
+      \resumeItemListStart
+        \resumeItem{«Оптимизация процессов. Подход DMAIC» --- факультет «Управление процессами»}
+      \resumeItemListEnd
+    \resumeSubheading
+      {РТУ МИРЭА (Российский технологический университет «МИРЭА»)}{Россия, Москва}
+      {Студент}{Сентябрь 2023 --- Декабрь 2023}
+      \resumeItemListStart
+        \resumeItem{Менеджмент (профессиональная переподготовка)}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------СТЕК ТЕХНОЛОГИЙ-----------
+\section{Стек технологий}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Testing}{: REST API testing, UI-автоматизация, pytest, Playwright, Selenide, Rest-assured, Allure, Test IT} \\
+     \textbf{Programming}{: Java, Python} \\
+     \textbf{Backend}{: Spring, FastAPI, SQLAlchemy} \\
+     \textbf{Frontend}{: Vue 3, Streamlit} \\
+     \textbf{Databases}{: PostgreSQL, Milvus, QDrant, Redis} \\
+     \textbf{CI/CD \& DevOps}{: Git, Docker, Docker-compose, Jenkins, GitLab CI, GitHub Actions, Apache Airflow} \\
+     \textbf{AI \& ML}{: RAG, embeddings \& rerankers, Sentence-Transformers, CAMEL-AI} \\
+     \textbf{Языки}{: Русский (родной), Английский (B1)}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}
